@@ -1,0 +1,104 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://bit.dev/reference/workspace/workspace-json
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "contact-me",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://static.bit.dev/brands/bit-logo-min.png",
+    /**
+     * default directory to place a component during `bit import` and `bit create`.
+     * the following placeholders are available:
+     * name - component name includes namespace, e.g. 'ui/button'.
+     * scopeId - full scope-id includes the owner, e.g. 'teambit.compilation'.
+     * scope - scope name only, e.g. 'compilation'.
+     * owner - owner name in bit.dev, e.g. 'teambit'.
+     **/
+    "defaultDirectory": "{scope}/{name}",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "cohen-codes.contact-me",
+    "resolveAspectsFromNodeModules": true,
+    "resolveEnvsFromRoots": true
+  },
+  /**
+  * Enable generator templates by uncommenting the desired environments below.
+  * These generators scaffold components for Node, React, Vue, and Angular.
+  * After uncommenting, run `bit install` to make them available in your workspace.
+  * Explore more dev environments at: https://bit.dev/docs/getting-started/composing/dev-environments
+  **/
+  "teambit.generator/generator": {
+    "envs": [
+      //  "bitdev.node/node-env",
+      //  "bitdev.react/react-env",
+      //  "bitdev.vue/vue-env",
+      //  "bitdev.angular/angular-env"
+    ]
+  },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@bitdev/node.generators.node-starters": "^0.0.9",
+        "@bitdev/node.generators.node-templates": "^1.0.15",
+        "@bitdev/react.eslint.eslint-config-bit-react": "^0.0.5",
+        "@bitdev/react.react-env": "^1.1.49",
+        "@cloudflare/workers-types": "^4.20240405.0",
+        "@cohen-codes/design.inputs.button": "^0.0.4",
+        "@cohen-codes/design.inputs.text-field": "^0.0.4",
+        "@nitsan770/portfolio.envs.react-with-mui": "^0.0.6",
+        "@nitsan770/portfolio.inputs.button": "^0.0.5",
+        "@nitsan770/portfolio.inputs.text-field": "^0.0.5",
+        "@opendoor/cloudworker": "^0.1.3",
+        "@teambit/cloud-providers.aspects.cloudflare-worker": "^0.0.25",
+        "@teambit/cloud-providers.clients.cloudflare": "^0.0.9",
+        "@teambit/defender.eslint-linter": "^1.0.18",
+        "@teambit/defender.prettier-formatter": "^1.0.8",
+        "@teambit/dependencies.modules.packages-excluder": "^1.0.8",
+        "@teambit/envs.docs.env-overview-template": "^0.0.2",
+        "@teambit/mdx.ui.mdx-scope-context": "^1.0.7",
+        "@teambit/preview.react-preview": "^1.0.23",
+        "@teambit/react.mounter": "^1.0.3",
+        "@teambit/toolbox.network.get-port": "^0.0.112",
+        "@teambit/toolbox.performance.v8-cache": "^0.0.31",
+        "@teambit/typescript.typescript-compiler": "^2.0.16",
+        "@teambit/vite.vitest-tester": "^0.0.33",
+        "@types/cloudflare": "^2.7.9",
+        "@types/jest": "29.5.4",
+        "@types/node": "16.18.44",
+        "bluebird": "^3.7.2",
+        "cloudflare": "^2.9.1",
+        "delay": "^5.0.0",
+        "form-data": "^4.0.0",
+        "http-method-enum": "^1.0.0",
+        "node-fetch": "^2.6.7",
+        "wrangler": "^3.1.1"
+      },
+      "peerDependencies": {
+        "react": "^17.0.2"
+      }
+    },
+    "linkCoreAspects": true,
+    "rootComponents": true
+  },
+  "teambit.workspace/workspace-config-files": {
+    "enableWorkspaceConfigWrite": true
+  },
+  "cohen-codes.contact-me/workers/send-contact-me-email": {}
+}

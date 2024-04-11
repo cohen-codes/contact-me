@@ -1,0 +1,27 @@
+---
+description: A Cloudflare worker that receives an email and stores it in a database.
+labels: ["serverless", "subscribe", "email"]
+---
+
+Cloudflare Workers are serverless applications most often used to intercept and modify network requests (much like Service Workers in the browser).
+
+This CF Worker sets a function to be triggered on a 'post' event. The function returns a [Response](https://developers.cloudflare.com/workers/runtime-apis/response),
+containing a message..
+
+## To edit the worker follow these steps:
+
+- Configure the app in the workspace.json file.
+
+```
+ "cohen-codes.contact-me/workers/send-contact-me-email": {},
+```
+
+- Edit `subscribe/.cf-worket.ts` file with your credentials.
+
+- Edit the `subscribe.app-root.ts` file to add your logic.
+
+- Tag the component. Don't forget to add the token as an env variable.
+
+```
+bit tag teambit.newsletter/workers/subscribe
+```

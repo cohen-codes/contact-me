@@ -1,0 +1,21 @@
+---
+description: A form that is compiled to submit contact messages
+labels: ["form", "contact form", "support form"]
+---
+
+import { ContactForm } from "./contact-form.js";
+
+A component renders a contact form
+Use with `ThemeProvider` to enforce stylings.
+
+### Component usage
+
+```js
+<ContactForm onSubmit={handleSubmit} />
+```
+
+### Render hello world!
+
+```js live
+<ContactForm onSubmit={(values) => console.log(values)} />
+```
