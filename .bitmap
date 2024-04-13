@@ -12,7 +12,7 @@
     "ui/contact-form": {
         "name": "ui/contact-form",
         "scope": "cohen-codes.contact-me",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "contact-me/ui/contact-form"
     },

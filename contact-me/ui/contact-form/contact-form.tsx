@@ -30,10 +30,10 @@ export function ContactForm({ onSubmit: onFormSubmit }: ContactFormProps) {
         .email('Email is invalid')
         .required('Email is required'),
       message: Yup.string()
-        .length(5)
+        .min(5)
         .required('At least say hello? (min 5 chars) :)'),
       subject: Yup.string()
-        .length(10)
+        .min(10)
         .required('Please elaborate a bit more (min 10 chars)'),
     }),
     onSubmit: async (values) => {
